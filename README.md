@@ -34,3 +34,9 @@ Aplicación web para la gestión de una cartelera de películas, desarrollada en
 3. Importa la base de datos desde phpMyAdmin usando el archivo `bd/cine_isil.sql`.
 4. Verifica los datos de conexión en `funciones/funciones.php` (host, usuario y contraseña de MySQL) y ajústalos si es necesario.
 5. Abre en el navegador:
+
+## Autor
+
+José Gabriel Rosas del Aguila — [@PocheDevv](https://github.com/PocheDevv)
+
+Proyecto desarrollado como trabajo académico en ISIL.
