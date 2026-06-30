@@ -1,0 +1,204 @@
+/* --- Variables del Sistema de Diseño --- */
+:root {
+    --bg-dark: #121212;
+    --bg-secondary: #1a1a1a;
+    --bg-card: #222222;
+    --primary-gold: #ffc107;
+    --accent-orange: #ff9800;
+    --text-white: #f8f9fa;
+    --text-muted: #b0b0b0;
+    --glass-bg: rgba(34, 34, 34, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+/* --- Estructura Sticky Footer --- */
+html, body {
+    height: 100%;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: 'Outfit', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+    margin-top: 56px; /* navbar fijo */
+}
+
+footer {
+    flex-shrink: 0;
+    background-color: #0b0b0b;
+    border-top: 1px solid var(--glass-border);
+    color: var(--text-muted);
+    padding: 25px 0;
+    font-size: 0.9rem;
+}
+
+/* --- Estilos de Temática Cine --- */
+.hero-cine { 
+    background-image: linear-gradient(rgba(18, 18, 18, 0.3), rgba(18, 18, 18, 0.95)), url('../img/cinema.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+    color: white; 
+    height: 500px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); 
+    position: relative;
+}
+
+.hero-cine::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, var(--bg-dark), transparent);
+}
+
+/* --- Botones Especiales --- */
+.bg-warning-gradient {
+    background: linear-gradient(135deg, var(--primary-gold), var(--accent-orange)) !important;
+    color: #000 !important;
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, var(--primary-gold), var(--accent-orange));
+    border: none;
+    color: #000;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-warning:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+    background: linear-gradient(135deg, #ffd043, #ffaa33);
+}
+
+/* --- Carrusel en Inicio --- */
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.2s ease;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: var(--primary-gold);
+}
+
+/* --- Tarjetas Estilo Netflix (Glassmorphism + Hover) --- */
+.movie-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6) !important;
+    border-color: rgba(255, 193, 7, 0.3);
+}
+
+.movie-card .card-img-top {
+    height: 320px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.movie-card:hover .card-img-top {
+    transform: scale(1.03);
+}
+
+/* --- Paneles Efecto Vidrio (Glassmorphism) --- */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+}
+
+/* --- Inputs Personalizados --- */
+.custom-input {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: var(--text-white) !important;
+    border-radius: 8px;
+    padding: 12px;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    border-color: var(--primary-gold) !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.2) !important;
+    outline: none;
+}
+
+.custom-input::placeholder {
+    color: #6c757d;
+}
+
+select.custom-input option {
+    background-color: var(--bg-secondary);
+    color: var(--text-white);
+}
+
+/* --- Badges Estilizados --- */
+.badge-gold {
+    background-color: rgba(255, 193, 7, 0.15);
+    color: var(--primary-gold);
+    border: 1px solid rgba(255, 193, 7, 0.3);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* --- Barra de Navegación Fija --- */
+.navbar-custom {
+    background-color: rgba(18, 18, 18, 0.9) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.navbar-custom .nav-link {
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-link:hover {
+    color: var(--primary-gold) !important;
+}
+
+/* --- Títulos e Iconos de Sección --- */
+.text-gold {
+    color: var(--primary-gold);
+}
+
+.border-warning {
+    border-color: var(--primary-gold) !important;
+}
